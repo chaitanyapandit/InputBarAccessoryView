@@ -299,6 +299,10 @@ extension CommonTableViewController: AutocompleteManagerDelegate, AutocompleteMa
         return true
     }
     
+    func autocompleteManager(_ manager: AutocompleteManager, filteredCompletions: [AutocompleteCompletion]) {
+        print(">>> COMPLETIONS: \(filteredCompletions.count)")
+    }
+    
     // MARK: - AutocompleteManagerDelegate Helper
     
     func setAutocompleteManager(active: Bool) {

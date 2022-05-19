@@ -30,6 +30,14 @@ import UIKit
 /// AutocompleteManagerDelegate is a protocol that more precisely define AutocompleteManager logic
 public protocol AutocompleteManagerDelegate: AnyObject {
     
+    /// Returns a collection of completions to be rendered.
+    ///
+    /// - Parameters:
+    ///   - manager: The AutocompleteManager
+    ///   - filteredCompletions: Number of user completions matching the prefix
+    /// - Returns: An array of matching completions
+    func autocompleteManager(_ manager: AutocompleteManager, filteredCompletions: [AutocompleteCompletion])
+    
     /// Can be used to determine if the AutocompleteManager should be inserted into an InputStackView
     ///
     /// - Parameters:
@@ -66,7 +74,7 @@ public protocol AutocompleteManagerDelegate: AnyObject {
 }
 
 public extension AutocompleteManagerDelegate {
-    
+        
     func autocompleteManager(_ manager: AutocompleteManager, shouldRegister prefix: String, at range: NSRange) -> Bool {
         return true
     }
