@@ -92,6 +92,10 @@ extension READMEPreviewViewController: AutocompleteManagerDelegate, Autocomplete
 
     // MARK: - AutocompleteManagerDelegate
 
+    func autocompleteManager(_ manager: AutocompleteManager, filteredCompletions: [AutocompleteCompletion]) {
+        
+    }
+    
     func autocompleteManager(_ manager: AutocompleteManager, shouldBecomeVisible: Bool) {
         setAutocompleteManager(active: shouldBecomeVisible)
     }
