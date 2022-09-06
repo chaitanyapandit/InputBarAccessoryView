@@ -280,6 +280,10 @@ extension CommonTableViewController: AutocompleteManagerDelegate, AutocompleteMa
     
     // MARK: - AutocompleteManagerDelegate
     
+    func autocompleteManager(_ manager: AutocompleteManager, textViewChangedSelection textView: UITextView) {
+        print(">>> SELECTION CHANGED")
+    }
+
     func autocompleteManager(_ manager: AutocompleteManager, shouldBecomeVisible: Bool) {
         setAutocompleteManager(active: shouldBecomeVisible)
     }

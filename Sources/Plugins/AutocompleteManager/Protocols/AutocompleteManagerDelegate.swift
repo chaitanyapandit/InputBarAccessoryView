@@ -63,6 +63,13 @@ public protocol AutocompleteManagerDelegate: AnyObject {
     ///   - text: The text to autocomplete with
     /// - Returns: If the prefix can be autocompleted. Default is TRUE
     func autocompleteManager(_ manager: AutocompleteManager, shouldComplete prefix: String, with text: String) -> Bool
+    
+    /// Determines if a change in selection of text has occurred
+    ///
+    /// - Parameters:
+    ///   - manager: The AutocompleteManager
+    ///   - textView: The textview in which text is selected managed by the AutocompleteManager
+    func autocompleteManager(_ manager: AutocompleteManager, textViewChangedSelection textView: UITextView)
 }
 
 public extension AutocompleteManagerDelegate {
