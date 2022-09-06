@@ -407,6 +407,10 @@ open class AutocompleteManager: NSObject, InputPlugin, UITextViewDelegate, UITab
     
     // MARK: - UITextViewDelegate
     
+    public func textViewDidChangeSelection(_ textView: UITextView) {
+        delegate?.autocompleteManager(self, didChangeSelection: textView)
+    }
+    
     public func textViewDidChange(_ textView: UITextView) {
         reloadData()
     }
